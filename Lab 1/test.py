@@ -2,7 +2,7 @@ def count_vowels(word):
     vowels = "AEIOUaeiou"
     return sum(1 for char in word if char in vowels)
 
-with open('pg2701.txt', 'r') as file:
+with open(r'pg2701.txt', 'r') as file: #error file cannot open
     total_words = 0
     total_vowels = 0
     
