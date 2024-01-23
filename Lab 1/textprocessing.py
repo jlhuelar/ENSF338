@@ -4,7 +4,7 @@ vowels = ['a','A','e','E','i','I','o','O','u','U','y','Y']
 
 def vowel_checker #checks and iterates over a word for a vowel. If a vowel, is found add +1 to the vowel counter
 
-#create a loop or something to make file read 
+#create a loop or something to make file read starting at line 41
 
 with open(r'pg2701.txt', 'r') as file:
      for i, line in enumerate(file.readlines(), 0):
