@@ -21,6 +21,7 @@ def binary_search(arr, target):
 
 import numpy as np
 import timeit
+import matplotlib.pyplot as plt
 
 def measure_performance(arr_size):
     linear_times = []
@@ -49,3 +50,34 @@ for size in sizes:
     performance_results.append((size, avg_linear, avg_binary))
 
 (performance_results)
+
+from scipy.optimize import curve_fit
+
+def linear_model(x, a, b):
+    return a * x + b
+
+def logarithmic_model(x, a, b):
+    return a * np.log(x) + b
+
+sizes = np.array([1000, 2000, 4000, 8000, 16000, 32000])
+binary_times = np.array([result[2] for result in performance_results])
+
+params_linear, _ = curve_fit(linear_model, sizes, binary_times)
+params_log, _ = curve_fit(logarithmic_model, sizes, binary_times)
+
+fitted_linear = linear_model(sizes, *params_linear)
+fitted_log = logarithmic_model(sizes, *params_log)
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(sizes, binary_times, 'bo', label='Binary Search Times')
+plt.plot(sizes, fitted_log, 'g--', label='Logarithmic Fit')
+
+plt.title('Binary Search Performance with Logarithmic Fit')
+plt.xlabel('Array Size')
+plt.ylabel('Average Time (seconds)')
+plt.legend()
+plt.grid(True)
+plt.savefig('Lab 2/binary_search_log_fit.jpg')
+
+'Lab 2/binary_search_log_fit.jpg'
