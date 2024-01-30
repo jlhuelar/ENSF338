@@ -1,7 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 
-file_path = 'internetdata.json'
+file_path = 'Lab 1/internetdata.json'
 
 low_income_countries = []
 high_income_countries = []
