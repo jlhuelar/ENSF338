@@ -3,7 +3,7 @@ import timeit
 def pow2(n):
     return 2 ** n
 
-n = 10
+n = int(input("Enter a value for n: "))
 
 result = pow2(n)
 print(result)

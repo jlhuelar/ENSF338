@@ -8,7 +8,7 @@ def calculate_average_vowels():
     vowel_counter = 0
     vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']
     
-    with open(r'Lab 1/pg2701.txt', 'r', encoding='utf-8') as file:
+    with open(r'pg2701.txt', 'r', encoding='utf-8') as file:
         for i, line in enumerate(file, 1):
             if i >= 41:
                 words = line.split()

@@ -43,8 +43,8 @@ def main(input_file):
     plt.legend()
     plt.grid(True)
 
-    plt.savefig('Lab 1/output.3.2.png')
+    plt.savefig('output.3.2.png')
     plt.show()
 
-input_file_path = 'Lab 1/large-file.json'
+input_file_path = 'large-file.json'
 main(input_file_path)
