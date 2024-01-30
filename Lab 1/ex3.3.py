@@ -25,7 +25,7 @@ def main(input_file):
     plt.title('Linear Regression of Processing Time vs Number of Records')
     plt.grid(True)
 
-    plt.savefig('output.3.3.png')
+    plt.savefig('Lab 1/output.3.3.png')
     plt.show()
 
 input_file_path = 'Lab 1/large-file.json'

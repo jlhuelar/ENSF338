@@ -27,6 +27,6 @@ def main(input_file, output_file):
     save_data(data, output_file)
 
 input_file_path = 'Lab 1/large-file.json'
-output_file_path = 'output.2.3.json'
+output_file_path = 'Lab 1/output.2.5.json'
 
 main(input_file_path, output_file_path)

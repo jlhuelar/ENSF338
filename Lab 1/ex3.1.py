@@ -26,7 +26,7 @@ try:
         plt.title('Internet Usage in Low-Income Countries')
         plt.xlabel('Internet Usage Rate')
         plt.ylabel('Number of Countries')
-        plt.savefig('hist1.png')
+        plt.savefig('Lab 1/hist1.png')
 
     if high_income_countries:
         plt.figure(figsize=(10,6))
@@ -34,7 +34,7 @@ try:
         plt.title('Internet Usage in High-Income Countries')
         plt.xlabel('Internet Usage Rate')
         plt.ylabel('Number of Countries')
-        plt.savefig('hist2.png')
+        plt.savefig('Lab 1/hist2.png')
 
 except FileNotFoundError:
     print(f'File not found: {file_path}')
