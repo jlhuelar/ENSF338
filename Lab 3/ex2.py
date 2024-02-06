@@ -1,3 +1,7 @@
+import timeit
+import random
+
+
 def bubble_sort(arr):
 	n = len(arr)
 	for i in range(n):
@@ -28,8 +32,19 @@ def partition(arr, low, high):
 			done = True
 		else:
             arr[left], arr[right] = arr[right], arr[left]
-    arr[low], arr[right] = arr[right], arr[low]
-return right
+	arr[low], arr[right] = arr[right], arr[low]
+	return right
 
-arr = []
+def generate_random_array(size):
+    return [random.randint(0, 10000) for _ in range(size)]
+
+sizes = [10, 20, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700]
+
+results = []
+
+def generate_random_array(size):
+    return [random.randint(1, 10000) for _ in range(size)]
+
+for size, bubble_time, quick_time in results:
+    print(f"Size {size:>4}: Bubble sort took {bubble_time:.5f} seconds, Quicksort took {quick_time:.5f} seconds")
 			
