@@ -86,13 +86,13 @@ plt.tight_layout()
 plt.show()
 
 # 4. The interpolating function used for linear search is a linear function, which is represented mathematically by f(x) = ax + b. We
-#    obtained values for a and b, which are the slope and y-intercept respectively, from the plotted curve. These  exact values depend
-#    on the system and environment in which the tests were run, but a should generally be positive, reflecting a linear realtionship
+#    obtained values for 'a' and 'b', which are the slope and y-intercept respectively, from the plotted curve. These  exact values depend
+#    on the system and environment in which the tests were run, but 'a' should generally be positive, reflecting a linear realtionship
 #    which is visible on the plot. The results for linear search are as expected since the linear search algorithm's times complexity
 #    is O(n) which means that the time taken to find an element scales linearly with the size of an array.
 #    
-#    For binary search, a logarithmic function was used for interpolation, which is represented by f(x) = alog(x) + b. The values of a
-#    and b obtained from the curve indicates how closely the search times follow a logarithmic growth pattern. As with the linear search,
-#    the specific values depend on the test conditions, but should show a positive a value, indicating an increase in time with larger
+#    For binary search, a logarithmic function was used for interpolation, which is represented by f(x) = alog(x) + b. The values of 'a'
+#    and 'b' obtained from the curve indicates how closely the search times follow a logarithmic growth pattern. As with the linear search,
+#    the specific values depend on the test conditions, but should show a positive 'a' value, indicating an increase in time with larger
 #    array sizes. The results for binary search also align with expectations since the binary search algorithm has a time complexity of
 #    O(logn) which means that the time taken to find an element increases logarithmically as the array size increases.
