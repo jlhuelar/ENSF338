@@ -1,10 +1,12 @@
-# 1. A profiler is used to provide an execution profile for a given program, meaning it gives a profile of statistics to describe 
-#    and measure relative system statistics such as long and how often various of parts of a program are executed
+# 1. A profiler is a tool used to provide an execution profile for a given program, meaning it gives a profile of statistics to describe 
+#    and measure relative system statistics and behaviours such as long and how often various of parts of a program are executed
 # 2. Profiling differs from benchmarking because in profiling you measure the relative system performance and with benchmarking,
-#    you measure the absolute system performance through different hardware or compliers.
-# 3. 7.969 seconds
+#    you measure the absolute system performance through different hardware, compliers, and other systems to test the performance.
+# 3. 7.203 seconds
 # 4. A sample output for profiling a program would include column headings that describes different statistics. This includes
-#    how many function calls were monitored
+#    how many function calls were monitored(ncalls), total time spent in function(tottime), average time per call to its functions (percall). 
+#    cumulative time spent in function(cumtime) and how the data and functions are sorted in the profile(Ordered by: ).
+#    The execution time is the first line that is given when a profile is created, it recognizes how many function calls were made in the execution time.
 
 import profile
 import timeit
