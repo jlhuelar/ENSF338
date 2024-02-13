@@ -45,3 +45,9 @@ plt.ylabel('Frequency')
 plt.legend()
 plt.title('Time Distribution for Growing List Size')
 plt.show()
+
+# 5. From the histogram, you might notice differences in the distributions of times taken for each operation. These differences can 
+#    be attributed to the underlying memory allocation and data copying processes involved in growing the list. When the list grows 
+#    from S to S+1, it may require reallocating a larger block of memory and copying the existing elements to this new location, 
+#    which can take more time. On the other hand, growing from S-1 to S might not require reallocation if the capacity allocated at 
+#    size S-1 is sufficient to hold one more element, leading to potentially faster append operations.
