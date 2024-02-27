@@ -70,7 +70,7 @@ def populate_list(lst, n):
         lst.insert_tail(i)
 
 # Sizes to test
-sizes = [1000, 2000, 4000, 8000]
+sizes = [1000, 2000, 3000, 4000]
 
 # Timing the reverse methods
 original_times = []
@@ -81,7 +81,7 @@ original_times_adjusted = []
 optimized_times_adjusted = []
 
 # Define the number of repetitions for each list size for the original method
-repetitions_original = {1000: 100, 2000: 100, 4000: 10, 8000: 10}
+repetitions_original = {1000: 100, 2000: 100, 3000: 100, 4000: 100}
 
 for size in sizes:
     lst = SinglyLinkedList()
