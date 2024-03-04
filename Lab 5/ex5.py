@@ -79,50 +79,49 @@ class CircularQueueLinkedList:
         return self.front is None
 
     def is_full(self):
-        # For a linked list, it's not limited by capacity.
         return False
 
 # Generate list of 40 operations for testing
 operations = [
-    ("enqueue", 1),     # enqueue 1
-    ("peek", 1),        # peek 1
-    ("dequeue", 1),     # dequeue 1
-    ("enqueue", 2),     # enqueue 2
-    ("enqueue", 3),     # enqueue 3
-    ("enqueue", 4),     # enqueue 4
-    ("enqueue", 5),     # enqueue 5
-    ("dequeue", 2),     # dequeue 2
-    ("dequeue", 3),     # dequeue 3
-    ("dequeue", 4),     # dequeue 4
-    ("peek", 5),        # peek 5
-    ("enqueue", None),  # enqueue None
-    ("dequeue", None),  # dequeue None
-    ("peek", None),     # peek None
-    ("enqueue", 6),     # enqueue 6
-    ("enqueue", 7),     # enqueue 7
-    ("enqueue", 8),     # enqueue 8
-    ("enqueue", 9),     # enqueue 9
-    ("enqueue", 10),    # enqueue 10
-    ("peek", 6),        # peek 6
-    ("dequeue", 6),     # dequeue 6
-    ("dequeue", 7),     # dequeue 7
-    ("dequeue", 8),     # dequeue 8
-    ("dequeue", 9),     # dequeue 9
-    ("peek", 10),       # peek 10
-    ("enqueue", None),  # enqueue None
-    ("dequeue", None),  # dequeue None
-    ("peek", None),     # peek None
-    ("enqueue", 11),    # enqueue 11
-    ("enqueue", 12),    # enqueue 12
-    ("enqueue", 13),    # enqueue 13
-    ("enqueue", 14),    # enqueue 14
-    ("enqueue", 15),    # enqueue 15
-    ("dequeue", 11),    # dequeue 11
-    ("dequeue", 12),    # dequeue 12
-    ("dequeue", 13),    # dequeue 13
-    ("peek", 14),       # peek 14
-    ("enqueue", 16),    # enqueue 16
-    ("enqueue", 17)     # enqueue 17
+    ("enqueue", 1),     
+    ("peek", 1),        
+    ("dequeue", 1),     
+    ("enqueue", 2),     
+    ("enqueue", 3),     
+    ("enqueue", 4),     
+    ("enqueue", 5),     
+    ("dequeue", 2),     
+    ("dequeue", 3),     
+    ("dequeue", 4),     
+    ("peek", 5),        
+    ("enqueue", None),  
+    ("dequeue", None),  
+    ("peek", None),     
+    ("enqueue", 6),     
+    ("enqueue", 7),     
+    ("enqueue", 8),     
+    ("enqueue", 9),     
+    ("enqueue", 10),    
+    ("peek", 6),        
+    ("dequeue", 6),     
+    ("dequeue", 7),     
+    ("dequeue", 8),     
+    ("dequeue", 9),     
+    ("peek", 10),       
+    ("enqueue", None),  
+    ("dequeue", None),  
+    ("peek", None),     
+    ("enqueue", 11),    
+    ("enqueue", 12),    
+    ("enqueue", 13),    
+    ("enqueue", 14),    
+    ("enqueue", 15),    
+    ("dequeue", 11),    
+    ("dequeue", 12),    
+    ("dequeue", 13),    
+    ("peek", 14),       
+    ("enqueue", 16),    
+    ("enqueue", 17)     
 ]
 
 # Function to perform operations on a queue
