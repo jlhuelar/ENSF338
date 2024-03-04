@@ -1,50 +1,35 @@
-class Stack:
-    def __init__(self):
-        self.items = []
+def compute(expression):
+    stack = []
+    tokens = expression.split()
 
-    def push(self, item):
-        self.items.append(item)
+    def apply_operator(op, a, b):
+        if op == '+': return a + b
+        elif op == '-': return a - b
+        elif op == '*': return a * b
+        elif op == '/': return a / b
 
-    def pop(self):
-        if not self.is_empty():
-            return self.items.pop()
-
-    def peek(self):
-        if not self.is_empty():
-            return self.items[-1]
-
-    def is_empty(self):
-        return len(self.items) == 0
-
-def evaluate_expression(expression):
-    stack = Stack()
-    tokens = expression[1:-1].split()
-    operator = tokens.pop(0)  # Get the first token as the operator
-    if len(tokens) == 1:  # Check if it's a unary expression
-        operand = int(tokens[0])
-        if operator == '+':
-            return operand
-        elif operator == '-':
-            return -operand
+    for token in reversed(tokens):
+        if token.isdigit(): 
+            stack.append(int(token))
+        elif token in '+-*/':  
+            if len(stack) < 2:
+                raise ValueError("Invalid expression: not enough operands for the operator.")
+            operand_a = stack.pop()
+            operand_b = stack.pop()
+            result = apply_operator(token, operand_a, operand_b)  
+            stack.append(result)
         else:
-            return None  # Unsupported unary operator
-    for token in tokens:
-        if token.isdigit():
-            stack.push(int(token))
-        elif token in ['+', '-', '*', '/']:
-            operand2 = stack.pop()
-            operand1 = stack.pop()
-            if token == '+':
-                stack.push(operand1 + operand2)
-            elif token == '-':
-                stack.push(operand1 - operand2)
-            elif token == '*':
-                stack.push(operand1 * operand2)
-            elif token == '/':
-                stack.push(operand1 / operand2)
+            raise ValueError(f"Invalid token: {token}")
+
+    if len(stack) != 1:
+        raise ValueError("Invalid expression: final stack size is not 1.")
     return stack.pop()
 
-if __name__ == "__main__":
-    expression = input("Enter the expression: ")
-    result = evaluate_expression(expression)
-    print(result)
+if __name__ == '__main__':
+    user_input = input("Enter an expression: ")
+    expr = user_input.replace('(', '').replace(')', '')
+    try:
+        result = compute(expr)
+        print(f"Result: {result}")
+    except ValueError as e:
+        print(e)
