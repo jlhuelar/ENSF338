@@ -53,7 +53,7 @@ def measure_performance(queue_class, tasks):
     start_time = timeit.default_timer()
     for task in tasks:
         if task == 'enqueue':
-            queue.enqueue(1)  # Enqueueing a dummy item
+            queue.enqueue(1)
         else:
             queue.dequeue()
     end_time = timeit.default_timer()
@@ -80,3 +80,8 @@ plt.show()
 
 print("Mean time for Array Queue:", sum(array_times) / len(array_times))
 print("Mean time for Linked List Queue:", sum(linked_list_times) / len(linked_list_times))
+
+# 5. The Linked List Queue performs more consistently and faster as its operations are consistently O(1). The Array Queue exhibits
+#    more variability in performance, due to the O(n) cost of element shifting. While the array-based queue is simple and can be very efficient for certain patterns of use (especially with predominantly enqueue operations), the linked-list-based queue offers more consistent performance across a mix of operations, thanks to its 
+#    efficient for certain patterns of use, the linked-list based queue offers more consistent performance across a mix of operations,
+#    thanks to its O(1) enqueue and dequeue operations.

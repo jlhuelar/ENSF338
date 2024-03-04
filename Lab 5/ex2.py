@@ -91,11 +91,8 @@ import timeit
 def generate_task_list(num_tasks=1000):
     tasks = []
     for _ in range(num_tasks):
-        # Generate a random number between 0 and 1
         operation = random.random()
-        # If the number is less than 0.7, the operation is 'enqueue', otherwise 'dequeue'
         if operation < 0.7:
-            # For 'enqueue', generate a random integer to enqueue
             tasks.append(('enqueue', random.randint(1, 100)))
         else:
             tasks.append(('dequeue', None))
@@ -113,14 +110,12 @@ def process_tasks(task_list, queue):
 # Function to measure the performance of a priority queue implementation
 def measure_performance(queue_class):
     total_time = 0
-    # Repeat the measurement for 100 lists
     for _ in range(100):
         task_list = generate_task_list()
         queue = queue_class()
-        # Measure the time taken to process the task list
         time_taken = timeit.timeit(lambda: process_tasks(task_list, queue), number=1)
         total_time += time_taken
-    return total_time / 100  # Return the average time
+    return total_time / 100
 
 # Measure performance of both priority queue implementations
 avg_time_merge_sort = measure_performance(PriorityQueueMergeSort)
