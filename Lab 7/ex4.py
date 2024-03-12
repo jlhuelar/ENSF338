@@ -24,9 +24,7 @@ class AVLTree:
         else:
             current_node.right = self._insert_recursive(current_node.right, key)
 
-        current_node.height = 1 + max(self._get_height(current_node.left),
-                                      self._get_height(current_node.right))
-
+        current_node.height = 1 + max(self._get_height(current_node.left), self._get_height(current_node.right))
         balance_factor = self._get_balance(current_node)
 
         if balance_factor > 1 and key < current_node.left.key:
@@ -48,29 +46,19 @@ class AVLTree:
     def _left_rotate(self, z):
         y = z.right
         T2 = y.left
-
         y.left = z
         z.right = T2
-
-        z.height = 1 + max(self._get_height(z.left),
-                           self._get_height(z.right))
-        y.height = 1 + max(self._get_height(y.left),
-                           self._get_height(y.right))
-
+        z.height = 1 + max(self._get_height(z.left), self._get_height(z.right))
+        y.height = 1 + max(self._get_height(y.left), self._get_height(y.right))
         return y
 
     def _right_rotate(self, z):
         y = z.left
         T3 = y.right
-
         y.right = z
         z.left = T3
-
-        z.height = 1 + max(self._get_height(z.left),
-                           self._get_height(z.right))
-        y.height = 1 + max(self._get_height(y.left),
-                           self._get_height(y.right))
-
+        z.height = 1 + max(self._get_height(z.left), self._get_height(z.right))
+        y.height = 1 + max(self._get_height(y.left), self._get_height(y.right))
         return y
 
     def _get_height(self, node):
@@ -83,29 +71,41 @@ class AVLTree:
             return 0
         return self._get_height(node.left) - self._get_height(node.right)
 
-def test_case(avl_tree, case):
-    if case == 1:
-        avl_tree.insert(30)
-        avl_tree.insert(20)
-        avl_tree.insert(10)
-        print("Test Case 1 completed.")
-    elif case == 2:
-        avl_tree.insert(10)
-        avl_tree.insert(20)
-        avl_tree.insert(30)
-        print("Test Case 2 completed.")
-    elif case == 3:
-        avl_tree.insert(30)
-        avl_tree.insert(10)
-        avl_tree.insert(20)
-        print("Test Case 3 completed.")
-    elif case == 4:
-        avl_tree.insert(10)
-        avl_tree.insert(30)
-        avl_tree.insert(20)
-        print("Case 3 not supported")
-
-# Initialize AVL Tree for testing
-for i in range(1, 5):
+def test_cases():
     avl_tree = AVLTree()
-    test_case(avl_tree, i)
+    avl_tree.insert(20)
+    avl_tree.insert(4)
+    avl_tree.insert(26)
+    print("Test Case 1: Pivot not detected")
+
+    avl_tree = AVLTree()
+    avl_tree.insert(20)
+    avl_tree.insert(4)
+    avl_tree.insert(15)
+    print("Test Case 2: Pivot exists, node added to the shorter subtree")
+
+    avl_tree = AVLTree()
+    avl_tree.insert(30)
+    avl_tree.insert(10)
+    avl_tree.insert(20)
+    print("Test Case 3a: Left-Right rotation completed")
+
+    avl_tree = AVLTree()
+    avl_tree.insert(10)
+    avl_tree.insert(30)
+    avl_tree.insert(20)
+    print("Test Case 3b: Right-Left rotation completed")
+
+    avl_tree = AVLTree()
+    avl_tree.insert(40)
+    avl_tree.insert(20)
+    avl_tree.insert(30)
+    print("Additional Test Case for 3b: Right-Left rotation completed")
+
+    avl_tree = AVLTree()
+    avl_tree.insert(20)
+    avl_tree.insert(40)
+    avl_tree.insert(30)
+    print("Additional Test Case for 3b: Right-Left rotation completed")
+
+test_cases()
